@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebAssembly workflow</title>
+    <script src="./dist/app.min.js"></script>
+    <script src="./dist/appWASM.js"></script>
+    <script>
+    "use strict"
+    window.addEventListener("load", () => {
+
+        console.log("js : Util.addTwo(2,2)", Util.addTwo(2,2))
+        console.log("js : Util.addThree(1,2,3)", Util.addThree(1,2,3))
+    })
+
+    window.addEventListener("wasmLoaded", () => {
+        console.log("wasm loaded")
+
+        console.log("WASM : addTwo(2, 2) = ", Module.ccall("addTwo", ["number"], ["number", "number"], [2, 2]))
+        console.log("WASM : addThree(1, 2, 3) = ", Module.ccall("addThree", ["number"], ["number", "number", "number"], [1, 2, 3]))
+        console.log("WASM : multTwo(3, 4) = ", Module.ccall("multTwo", ["number"], ["number", "number"], [3, 4]))
+
+
+        const main = new Main(Module)
+        console.log("js: addFour", main.addFour(1, 2, 3, 4))
+
+        const names = {
+            Alice: 0,
+            Bob: 1
+        }
+
+        const setName = Module.cwrap("setName", null, ["number"])
+        const getName = () => {
+            const index = Module.ccall("getName", "number", null, null)
+            return Object.keys(names).find(key => names[key]==index)
+        }
+
+        console.log("Setting name to Alice")
+        setName(names["Alice"])
+        console.log("Current name: ", getName())
+
+        console.log("Setting name to Bob")
+        setName(names["Bob"])
+        console.log("Current name: ", getName())
+
+    })
+    </script>
+</head>
+<body>
+open the console
+</body>
+</html>

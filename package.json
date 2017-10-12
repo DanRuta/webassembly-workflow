@@ -1,0 +1,45 @@
+{
+  "name": "webassembly-workflow",
+  "version": "1.0.0",
+  "description": "A WebAssembly shell project, set up with task runners, testing and CI for JS and C++",
+  "scripts": {
+    "test": "npm run js-tests && npm run cpp-tests",
+    "js-tests": "nyc mocha test/js-tests.js",
+    "cpp-tests": "cd ./build && make && cpp-tests",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "build": "rm -rf build && mkdir build && cd build && cmake -G\"MSYS Makefiles\" .. && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanRuta/webassembly-workflow.git"
+  },
+  "keywords": [],
+  "main": "dist/app.min.js",
+  "author": "Dan Ruta",
+  "license": "MIT",
+  "directories": {},
+  "bugs": {
+    "url": "https://github.com/DanRuta/webassembly-workflow/issues"
+  },
+  "engines": {
+    "node": ">= 8.4.0"
+  },
+  "homepage": "https://github.com/DanRuta/webassembly-workflow#readme",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "coveralls": "^2.13.1",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "git://github.com/gruntjs/grunt-contrib-uglify.git#harmony",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-exec": "^3.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^11.0.2",
+    "sinon": "^2.3.2",
+    "sinon-chai": "^2.10.0"
+  }
+}
