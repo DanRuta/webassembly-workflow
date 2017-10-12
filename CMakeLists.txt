@@ -17,7 +17,7 @@ include_directories(
     )
 
 add_library(
-    jsNet
+    webassembly-workflow
     dev/cpp/main.cpp
     )
 
@@ -54,7 +54,7 @@ add_dependencies(cpp-tests googletest)
 target_link_libraries(
     cpp-tests
     googletest
-    jsNet
+    webassembly-workflow
     pthread
     )
 
