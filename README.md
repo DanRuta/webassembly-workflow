@@ -3,8 +3,12 @@ WebAssembly workflow
 [![Build Status](https://travis-ci.org/DanRuta/webassembly-workflow.svg?branch=master)](https://travis-ci.org/DanRuta/webassembly-workflow) JS: [![Coverage Status](https://coveralls.io/repos/github/DanRuta/webassembly-workflow/badge.svg?branch=master)](https://coveralls.io/github/DanRuta/webassembly-workflow?branch=master) C++ [![codecov](https://codecov.io/gh/DanRuta/webassembly-workflow/branch/master/graph/badge.svg)](https://codecov.io/gh/DanRuta/webassembly-workflow)
 ---
 
-
 This is a project shell to use for starting new WebAssembly projects. The workflow has been configured with task runners for packaging JavaScript files, to compile C++ with emscripten, and to minify both.
+
+# Read more
+Medium article with set-up instructions, and some suggestions for alternatives:
+https://medium.com/@DanRuta/setting-up-the-ultimate-webassembly-c-workflow-6484efa3e162
+
 
 JavaScript unit tests were set up with Mocha+Chai, and with sinon (and sinon-chai) for mocking. C++ unit testss were set up with google test, with the included google mock for mocking.
 
