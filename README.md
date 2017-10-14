@@ -7,6 +7,7 @@ This is a project shell to use for starting new WebAssembly projects. The workfl
 
 # Read more
 Medium article with set-up instructions, and some suggestions for alternatives:
+
 https://medium.com/@DanRuta/setting-up-the-ultimate-webassembly-c-workflow-6484efa3e162
 
 
@@ -20,7 +21,7 @@ Travis was configured for CI, and test coverage is reported to Coveralls for Jav
 Make sure to clone the repo recursively, in order to get the Google Test framework.
 
 ```
-git clone --recursive https://github.com/DanRuta/gtest.git
+git clone --recursive https://github.com/DanRuta/webassembly-workflow.git
 ```
 
 When finished, run ```npm run build```. This will build the project into a build folder, and it will also install all the npm dependencies.
