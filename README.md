@@ -26,6 +26,10 @@ git clone --recursive https://github.com/DanRuta/webassembly-workflow.git
 
 When finished, run ```npm run build```. This will build the project into a build folder, and it will also install all the npm dependencies.
 
+Note:
+
+If not using Windows, make sure to tweak the package.json commands. Specifically, remove the ```-G\"MSYS Makefiles\"``` flag from the build script, and change ```cpp-tests``` to ```./cpp-tests``` in the cpp-tests script (thanks @Ckimchris).
+
 **Make sure to run this through MinGW if using Windows**
 
 # Developing
