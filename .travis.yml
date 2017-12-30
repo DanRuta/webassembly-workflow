@@ -5,12 +5,13 @@ language:
 script:
   - nvm install v8.7.0
   - npm install -g codecov
+  - npm install -g istanbul
   - mkdir build
   - cd build
   - cmake ..
+  - make
   - npm install
   - npm run js-tests
-  - make
   - ./cpp-tests
 
 after_success:
