@@ -42,7 +42,7 @@ To get WebAssembly to run in the browser, you must serve it via a server. Just r
 
 **Make sure to install emscripten first, at "C:/emsdk". If you've installed it elsewhere, or have installed it globally, just change the path in the gruntfile.**
 
-# Contribuiting
+# Contributing
 
 I've tried to make this as easy as possible to use, with as little set up as possible, while keeping it Windows friendly. If there are ways to improve it, or if there are really useful things that can be added, I'd be glad to accept feedback and / or pull requests.
 
