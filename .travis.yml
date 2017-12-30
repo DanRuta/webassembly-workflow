@@ -10,7 +10,14 @@ script:
   - cd build
   - cmake ..
   - make
-  - npm install
+  # - npm install
+  - npm install -g coveralls
+  - npm install -g mocha
+  - npm install -g mocha-lcov-reporter
+  - npm install -g chai
+  - npm install -g nyc
+  - npm install -g sinon
+  - npm install -g sinon-chai
   - npm run js-tests
   - ./cpp-tests
 
