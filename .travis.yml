@@ -2,14 +2,9 @@ sudo: required
 language:
   - cpp
 
-node_js:
-  - 8.4.0
-
-before_install:
-  - npm install -g codecov
-
 script:
-  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install v8.7.0
+  - nvm install v8.7.0
+  - npm install -g codecov
   - mkdir build
   - cd build
   - cmake ..
