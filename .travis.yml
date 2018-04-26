@@ -10,18 +10,8 @@ script:
   - cd build
   - cmake ..
   - make
-  # - npm install
-  - npm install -g coveralls
-  - npm install -g mocha
-  - npm install -g mocha-lcov-reporter
-  - npm install -g chai
-  - npm install -g nyc
-  - npm install -g sinon
-  - npm install -g sinon-chai
-  - npm run js-tests
+  - npm install
   - ./cpp-tests
-
-after_success:
+  - npm run js-tests
   - npm run coverage
-  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
   - codecov
