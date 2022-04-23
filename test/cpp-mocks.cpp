@@ -3,7 +3,7 @@
 class MockStuff : public Stuff {
 public:
 
-    // https://github.com/google/googletest/blob/master/googlemock/docs/CookBook.md#making-the-compilation-faster
+    // https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#making-the-compilation-faster
     MockStuff ();
 
     virtual ~MockStuff();
